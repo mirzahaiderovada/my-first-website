@@ -1,11 +1,11 @@
 const express = require("express");
-const router = express.Router();
+const userRouter = express.Router();
 const videoController = require("../controllers/videoController");
 
-router.get("/videos", videoController.getAllVideos);
-router.get("/videos/:id", videoController.getVideoById);
-router.post("/videos", videoController.createVideo);
-router.put("/videos/:id", videoController.updateVideo);
-router.delete("/videos/:title", videoController.deleteVideo);
+userRouter.get("/videos", videoController.getAllVideos);
+userRouter.get("/videos/:id", videoController.getVideoById);
+userRouter.post("/videos", videoController.createVideo);
+userRouter.put("/videos/:id", videoController.updateVideo);
+userRouter.delete("/videos/:title", videoController.deleteVideo);
 
-module.exports = router;
+module.exports = userRouter;
