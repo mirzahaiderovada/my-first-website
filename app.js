@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
+
+const cookieParser = require("cookie-parser");
 const { sequelize } = require("./config/database");
 const videoController = require("./routes/videoRoutes");
 const userController = require("./routes/userRoutes");
+
+app.set("view engine", "pug");
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 sequelize
   .authenticate()

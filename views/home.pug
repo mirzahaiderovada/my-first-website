@@ -1,0 +1,14 @@
+html
+  head
+    title Video List
+
+  body
+    h1 Video List
+
+    ul
+      each video in videos
+        li
+          h2= video.title
+          p= video.description
+          p User Email: #{video.user_email}
+          // Add any other video information you want to display

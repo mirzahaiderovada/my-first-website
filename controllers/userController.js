@@ -42,11 +42,12 @@ const login = async (req, res) => {
         user.user_password
       );
       if (matchPassword) {
-        const token = jwt.sign(
-          { user_email: user.user_email, id: user.id },
-          SECRET_KEY
-        );
-        res.status(200).json({ user, token });
+        const token = jwt.sign({ user_email: user.user_email }, SECRET_KEY);
+        // res.status(200).json({ user, token });
+        // req.cookies.token = token;
+        res.cookie("token", token);
+
+        res.redirect("/home");
       } else {
         res.status(400).json({ message: "Invalid Credentials" });
       }

@@ -15,6 +15,9 @@ const Video = sequelize.define(
     description: {
       type: Sequelize.DataTypes.TEXT,
     },
+    user_email: {
+      type: Sequelize.DataTypes.STRING,
+    },
   },
   {
     freezeTableName: true,
